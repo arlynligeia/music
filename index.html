@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ethereal Web Vibe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<main class="card">
+  <h1>Ethereal Web Vibe</h1>
+  <p class="sub">cyber espacial · lofi · vaporwave</p>
 
+  <canvas id="viz" aria-label="Visualizador de audio"></canvas>
+  <div id="chords" class="chords"></div>
+
+  <div class="row">
+    <button id="play" class="main">▶ PLAY</button>
+    <button id="gen">✦ GENERAR NUEVA MELODÍA</button>
+  </div>
+
+  <div class="sliders">
+    <label>Volumen <input id="vol" type="range" min="0" max="100" value="70"></label>
+    <label>BPM <b id="bpmv">80</b> <input id="bpm" type="range" min="70" max="90" value="80"></label>
+  </div>
+
+  <h2>Descargar este loop</h2>
+  <div class="row dl">
+    <button data-export="wav">Descargar WAV</button>
+    <button data-export="mp3">Descargar MP3</button>
+    <button data-export="ogg">Descargar OGG</button>
+    <button data-export="midi">Descargar MIDI</button>
+    <button data-export="json">Descargar JSON</button>
+    <label class="btn">Importar JSON<input id="import" type="file" accept=".json,application/json" hidden></label>
+  </div>
+  <p id="status" class="status">Pulsa PLAY para empezar. Cada melodía se genera por código y es única.</p>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lamejs/1.2.1/lame.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
